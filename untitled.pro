@@ -19,6 +19,7 @@ SOURCES += src/untitled.cpp
 DISTFILES += qml/untitled.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
+    qml/pages/FourthPage.qml \
     qml/pages/SecondPage.qml \
     qml/pages/ThirdPage.qml \
     rpm/untitled.changes.in \

@@ -5,7 +5,7 @@ CoverBackground {
     Label {
         id: label
         anchors.centerIn: parent
-        text: qsTr("My Cover")
+        text: qsTr("Pause")
     }
 
     CoverActionList {
@@ -13,10 +13,21 @@ CoverBackground {
 
         CoverAction {
             iconSource: "image://theme/icon-cover-next"
+            onTriggered: label.text = "Play"
         }
 
         CoverAction {
             iconSource: "image://theme/icon-cover-pause"
+            onTriggered: label.text = "Pause"
+        }
+        CoverAction {
+            iconSource: "image://theme/icon-cover-next"
+            onTriggered: label.text = "Play"
+        }
+
+        CoverAction {
+            iconSource: "image://theme/icon-cover-pause"
+            onTriggered: label.text = "Pause"
         }
     }
 }

@@ -11,7 +11,7 @@ Page {
 
         id: column
         anchors.horizontalCenter: parent.horizontalCenter
-        width: page.width
+        width: thirdPage.width
         spacing: Theme.paddingLarge
         ProgressBar {
             width: parent.width
@@ -23,6 +23,17 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             value: 0.35
         }
+        Button {
+            text: "Open dialog"
+            onClicked: {
+                var dialog = pageStack.push(Qt.resolvedUrl("FourthPage.qml"),
+                                            {firstTextFieldValue: 2, secondTextFieldValue: 3});
+                dialog.accepted.connect(function() {
+                   console.log(parseInt(dialog.firstTextFieldValue) + parseInt(dialog.secondTextFieldValue));
+                });
+            }
+        }
+
         BusyIndicator {
             id: busyIndicator
             anchors.horizontalCenter: parent.horizontalCenter
@@ -32,6 +43,9 @@ Page {
         Button {
             text: "Close"
             onPressed: pageStack.popAttached()
+        }
+        MenuLabel {
+
         }
     }
 }
